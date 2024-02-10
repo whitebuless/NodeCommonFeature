@@ -1,0 +1,2 @@
+# NodeCommonFeature
+practice node
