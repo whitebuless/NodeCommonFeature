@@ -53,5 +53,16 @@ const fs=require('fs')
 //   }
 // })
 //2.同步
-let data=fs.readFileSync('./sentence')
-console.log(data.toString());
+// let data=fs.readFileSync('./sentence')
+// console.log(data.toString());
+
+// 流式读取
+const rs=fs.createReadStream('./0829.jpg')
+// 绑定data事件读完一块执行回调
+rs.on('data',chunk=>{
+  console.log(chunk);
+})
+// 绑定可选事件end
+rs.on('end',()=>{
+  console.log("读取完成");
+})
