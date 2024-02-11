@@ -33,12 +33,25 @@ const fs=require('fs')
 // fs.appendFileSync('./sentence','helo nodejs')
 
 // 流式写入  用于写入频繁的场景
-const ws=fs.createWriteStream('./sentence');
+// const ws=fs.createWriteStream('./sentence');
 //写入
-ws.write("first\n");
-ws.write('second\n');
-ws.write('third\n');
+// ws.write("first\n");
+// ws.write('second\n');
+// ws.write('third\n');
 //关闭
-ws.close()
+// ws.close()
 
-
+// 文件读取
+//1.异步读取
+// fs.readFile(path[,option],callback)
+// fs.readFile("./sentence",(err,data)=>{
+//   if(err){
+//     console.log(err);
+//   }
+//   else{
+//     console.log(data.toString())
+//   }
+// })
+//2.同步
+let data=fs.readFileSync('./sentence')
+console.log(data.toString());
