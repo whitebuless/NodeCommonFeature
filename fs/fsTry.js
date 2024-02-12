@@ -5,6 +5,7 @@
   2.执行写入操作，fs.writeFile(file,data[,options],callback)
 **/
 const { log } = require('console');
+const process=require('process')
 const fs=require('fs')
 // 主JS线程与IO线程异步执行，主线程调用结束后，callback才可以执行，执行错误对象传入err中
 // fs.writeFile('./sentence','helo nodejs',err=>{
@@ -71,10 +72,31 @@ const fs=require('fs')
 // way1  readFile
 // let data=fs.readFileSync('./pic.jpg');
 // fs.writeFileSync('./copy.jpg',data);
+// console.log(process.memoryUsage())  //通过rss比较内存的占用量
 // way2 stream  <better>
 // const rs=fs.createReadStream('./pic.jpg');
 // const ws=fs.createWriteStream('./copy2.jpg');
 // rs.on('data',chunk=>{
 //   ws.write(chunk)
-// }
-// )
+// })
+// console.log(process.memoryUsage())
+
+// 重命名
+// fs.rename(file,newfile,callback)
+// fs.rename('./sentence','./words',err=>{
+//   if(err){
+//     console.log('操作失败');
+//   }
+//   else{
+//     console.log('重命名成功');
+//   }
+// })
+// 文件移动
+fs.rename('./copy.jpg','./deepfile/COPY.jpg',err=>{
+  if(err){
+    console.log('操作失败');
+  }
+  else{
+    console.log('重命名成功');
+  }
+})
