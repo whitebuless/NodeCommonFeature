@@ -172,3 +172,14 @@ const fs=require('fs')
 //     console.log('成功');
 //   }
 // })
+
+// 查看资源状态
+fs.stat('./copy2.jpg',(err,data)=>{
+  if(err){
+    console.log('失败');
+    return;
+  }
+  else{
+    console.log(data);
+  }
+})
