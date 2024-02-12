@@ -92,11 +92,31 @@ const fs=require('fs')
 //   }
 // })
 // 文件移动
-fs.rename('./copy.jpg','./deepfile/COPY.jpg',err=>{
+// fs.rename('./copy.jpg','./deepfile/COPY.jpg',err=>{
+//   if(err){
+//     console.log('操作失败');
+//   }
+//   else{
+//     console.log('重命名成功');
+//   }
+// })
+
+// 文件删除    unlink  unlinkSync
+// fs.unlink('./copy2 copy.jpg',err=>{
+//   if(err){
+//     console.log('删除失败');
+//     return;
+//   }
+//   else{
+//     console.log('删除成功');
+//   }
+// })
+//way2       rm  rmSync
+fs.rm('./copy2 copy.jpg',err=>{
   if(err){
-    console.log('操作失败');
+    console.log('失败');
   }
   else{
-    console.log('重命名成功');
+    console.log('成功');
   }
 })
