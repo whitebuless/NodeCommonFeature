@@ -112,11 +112,63 @@ const fs=require('fs')
 //   }
 // })
 //way2       rm  rmSync
-fs.rm('./copy2 copy.jpg',err=>{
-  if(err){
-    console.log('失败');
-  }
-  else{
-    console.log('成功');
-  }
-})
+// fs.rm('./copy2 copy.jpg',err=>{
+//   if(err){
+//     console.log('失败');
+//   }
+//   else{
+//     console.log('成功');
+//   }
+// })
+
+// 文件夹操作
+// 创建文件夹
+// fs.mkdir('./html',err=>{
+//   if(err){
+//     console.log('创建失败');
+//     return;
+//   }
+//   else{
+//     console.log('成功');
+//   }
+// })
+// 递归创建
+// fs.mkdir('./a/b/c',{recursive:true},err=>{
+//   if(err){
+//     console.log('创建失败');
+//     return;
+//   }
+//   else{
+//     console.log('成功');
+//   }
+// })
+//读取文件夹
+// fs.readdir('../buffer',(err,data)=>{
+//   if(err){
+//     console.log('失败');
+//     return;
+//   }
+//   else{
+//     console.log(data);
+//   }
+// });
+
+// 删除文件夹
+// fs.rmdir('./html',err=>{
+//   if(err){
+//     console.log('失败');
+//     return;
+//   }
+//   else{
+//     console.log('成功');
+//   }
+// })
+// fs.rmdir('./a',{recursive:true},err=>{
+//   if(err){
+//     console.log('失败');
+//     return;
+//   }
+//   else{
+//     console.log('成功');
+//   }
+// })
