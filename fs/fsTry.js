@@ -57,12 +57,24 @@ const fs=require('fs')
 // console.log(data.toString());
 
 // 流式读取
-const rs=fs.createReadStream('./0829.jpg')
-// 绑定data事件读完一块执行回调
-rs.on('data',chunk=>{
-  console.log(chunk);
-})
-// 绑定可选事件end
-rs.on('end',()=>{
-  console.log("读取完成");
-})
+// const rs=fs.createReadStream('./0829.jpg')
+// // 绑定data事件读完一块执行回调
+// rs.on('data',chunk=>{
+//   console.log(chunk);
+// })
+// // 绑定可选事件end
+// rs.on('end',()=>{
+//   console.log("读取完成");
+// })
+
+//复制文件
+// way1  readFile
+// let data=fs.readFileSync('./pic.jpg');
+// fs.writeFileSync('./copy.jpg',data);
+// way2 stream  <better>
+// const rs=fs.createReadStream('./pic.jpg');
+// const ws=fs.createWriteStream('./copy2.jpg');
+// rs.on('data',chunk=>{
+//   ws.write(chunk)
+// }
+// )
