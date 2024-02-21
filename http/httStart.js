@@ -8,7 +8,7 @@ const server=http.createServer((request,response)=>{
   response.end('<h1>你好<h1>');//设置响应体
 });
 
-// 监听端口，启动服务,
+// 监听端口，启动服务,注意端口不要被占用
 server.listen(9000,()=>{
   console.log('服务已经启动');
 })
